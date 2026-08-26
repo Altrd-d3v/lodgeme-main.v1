@@ -102,6 +102,9 @@ function ListingDetail() {
               {formatPrice(listing.price)}{" "}
               <span className="text-sm font-normal text-muted-foreground">/ year</span>
             </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              About {formatPrice(Math.round(listing.price / 12))} a month
+            </p>
             <p className="mt-1 text-sm text-muted-foreground">Landlord: {listing.landlord}</p>
 
             {sent ? (
@@ -112,28 +115,110 @@ function ListingDetail() {
                 </p>
               </div>
             ) : (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSent(true);
-                }}
-                className="mt-6 space-y-3"
-              >
-                <input required placeholder="Full name" className="input-field" />
-                <input required placeholder="Matric number" className="input-field" />
-                <input required type="date" aria-label="Move-in date" className="input-field" />
+              <>
                 <button
-                  type="submit"
-                  className="mt-2 h-12 w-full rounded-full bg-primary font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                  type="button"
+                  onClick={() => setOpen(true)}
+                  className="mt-6 h-12 w-full rounded-full bg-primary font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                 >
                   Request to book
                 </button>
-                <p className="text-center text-xs text-muted-foreground">
-                  Free to request. The landlord replies within 24 hours.
+                <p className="mt-3 text-center text-xs text-muted-foreground">
+                  Free to request · No payment until the landlord confirms
                 </p>
-              </form>
+              </>
             )}
           </aside>
+        </div>
+      </main>
+
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="max-w-md rounded-3xl">
+          <DialogHeader>
+            <DialogTitle className="text-lg">Book {listing.title}</DialogTitle>
+            <DialogDescription>
+              {formatPrice(listing.price)} per year · {listing.area}. No payment is taken now — the
+              landlord confirms availability first.
+            </DialogDescription>
+          </DialogHeader>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              setOpen(false);
+              setSent(true);
+            }}
+            className="space-y-4"
+          >
+            <div className="space-y-1.5">
+              <label htmlFor="name" className="text-sm font-medium">
+                Full name
+              </label>
+              <input id="name" required placeholder="Amaka Okoro" className="input-field" />
+            </div>
+            <div className="space-y-1.5">
+              <label htmlFor="email" className="text-sm font-medium">
+                Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                required
+                placeholder="amaka@student.edu.ng"
+                className="input-field"
+              />
+            </div>
+            <div className="space-y-1.5">
+              <label htmlFor="matric" className="text-sm font-medium">
+                Matric number
+              </label>
+              <input id="matric" required placeholder="190401025" className="input-field" />
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-1.5">
+                <label htmlFor="movein" className="text-sm font-medium">
+                  Move-in date
+                </label>
+                <input id="movein" type="date" required className="input-field" />
+              </div>
+              <div className="space-y-1.5">
+                <label htmlFor="months" className="text-sm font-medium">
+                  Months
+                </label>
+                <input
+                  id="months"
+                  type="number"
+                  min={1}
+                  max={24}
+                  defaultValue={12}
+                  className="input-field"
+                />
+              </div>
+            </div>
+            <div className="space-y-1.5">
+              <label htmlFor="message" className="text-sm font-medium">
+                Message to host (optional)
+              </label>
+              <textarea
+                id="message"
+                rows={3}
+                placeholder="I'm a 300-level student resuming in October."
+                className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm outline-none"
+              />
+            </div>
+            <button
+              type="submit"
+              className="h-12 w-full rounded-full bg-primary font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              Send request
+            </button>
+          </form>
+        </DialogContent>
+      </Dialog>
+
+      <SiteFooter />
+    </div>
+  );
+}
         </div>
       </main>
       <SiteFooter />

@@ -4,6 +4,13 @@ import { ArrowLeft, BadgeCheck, Bath, BedDouble, Check, MapPin, Star } from "luc
 
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { formatPrice, listings, schoolLabels } from "@/data/listings";
 
 export const Route = createFileRoute("/listings/$slug")({

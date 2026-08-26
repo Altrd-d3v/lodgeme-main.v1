@@ -26,10 +26,18 @@ export function SiteFooter() {
           </ul>
         </div>
         <div className="text-sm">
-          <p className="font-medium">Landlords</p>
+          <p className="font-medium">Landlords &amp; agents</p>
           <ul className="mt-3 space-y-2 text-muted-foreground">
-            <li>List a room</li>
-            <li>Inspection visits</li>
+            <li>
+              <Link to="/auth" className="hover:text-foreground">
+                List a room
+              </Link>
+            </li>
+            <li>
+              <Link to="/landlord" className="hover:text-foreground">
+                Manage my rooms
+              </Link>
+            </li>
             <li>hello@lodgemate.ng</li>
           </ul>
         </div>

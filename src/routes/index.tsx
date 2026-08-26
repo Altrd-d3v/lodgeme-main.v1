@@ -62,7 +62,7 @@ function Index() {
         </div>
       </section>
 
-      <div className="mx-auto -mt-14 max-w-5xl px-5">
+      <div className="relative z-20 mx-auto -mt-14 max-w-5xl px-5">
         <form
           onSubmit={(e) => {
             e.preventDefault();

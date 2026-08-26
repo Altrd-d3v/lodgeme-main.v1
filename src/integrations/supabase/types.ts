@@ -14,7 +14,93 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          account_type: Database["public"]["Enums"]["account_type"]
+          created_at: string
+          full_name: string | null
+          id: string
+          phone: string | null
+          updated_at: string
+        }
+        Insert: {
+          account_type?: Database["public"]["Enums"]["account_type"]
+          created_at?: string
+          full_name?: string | null
+          id: string
+          phone?: string | null
+          updated_at?: string
+        }
+        Update: {
+          account_type?: Database["public"]["Enums"]["account_type"]
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      properties: {
+        Row: {
+          amenities: string[]
+          area: string
+          baths: number
+          beds: number
+          contact_phone: string | null
+          created_at: string
+          description: string | null
+          distance: string | null
+          id: string
+          image_url: string | null
+          owner_id: string
+          price: number
+          published: boolean
+          room_type: string
+          school: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          amenities?: string[]
+          area: string
+          baths?: number
+          beds?: number
+          contact_phone?: string | null
+          created_at?: string
+          description?: string | null
+          distance?: string | null
+          id?: string
+          image_url?: string | null
+          owner_id: string
+          price: number
+          published?: boolean
+          room_type: string
+          school: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          amenities?: string[]
+          area?: string
+          baths?: number
+          beds?: number
+          contact_phone?: string | null
+          created_at?: string
+          description?: string | null
+          distance?: string | null
+          id?: string
+          image_url?: string | null
+          owner_id?: string
+          price?: number
+          published?: boolean
+          room_type?: string
+          school?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +109,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      account_type: "landlord" | "agent"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +236,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      account_type: ["landlord", "agent"],
+    },
   },
 } as const

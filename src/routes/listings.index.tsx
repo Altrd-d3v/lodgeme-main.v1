@@ -5,13 +5,13 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ListingCard } from "@/components/ListingCard";
 import { budgets, filterListings, roomTypes, schools } from "@/data/listings";
 
-type Search = { school?: string; type?: string; budget?: number };
+type Search = { school?: string | undefined; type?: string | undefined; budget?: number | undefined };
 
 export const Route = createFileRoute("/listings/")({
   validateSearch: (search: Record<string, unknown>): Search => ({
-    school: typeof search.school === "string" ? search.school : undefined,
-    type: typeof search.type === "string" ? search.type : undefined,
-    budget: search.budget ? Number(search.budget) : undefined,
+    school: typeof search["school"] === "string" ? search["school"] : undefined,
+    type: typeof search["type"] === "string" ? search["type"] : undefined,
+    budget: search["budget"] ? Number(search["budget"]) : undefined,
   }),
   head: () => ({
     meta: [

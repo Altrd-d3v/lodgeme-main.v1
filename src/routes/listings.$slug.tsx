@@ -219,9 +219,3 @@ function ListingDetail() {
     </div>
   );
 }
-        </div>
-      </main>
-      <SiteFooter />
-    </div>
-  );
-}

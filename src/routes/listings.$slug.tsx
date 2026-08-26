@@ -41,6 +41,7 @@ export const Route = createFileRoute("/listings/$slug")({
 function ListingDetail() {
   const { listing } = Route.useLoaderData();
   const [sent, setSent] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">

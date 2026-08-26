@@ -141,5 +141,37 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
   }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility select-field {
+  height: 3rem;
+  width: 100%;
+  border-radius: 9999px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  padding-inline: 1rem;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+@utility input-field {
+  height: 3rem;
+  width: 100%;
+  border-radius: 9999px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  padding-inline: 1rem;
+  font-size: 0.875rem;
+  outline: none;
 }

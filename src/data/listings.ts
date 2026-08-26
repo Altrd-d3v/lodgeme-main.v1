@@ -164,7 +164,11 @@ export const listings: Listing[] = [
 
 export const formatPrice = (n: number) => `₦${n.toLocaleString("en-NG")}`;
 
-export function filterListings(opts: { school?: string; type?: string; budget?: number }) {
+export function filterListings(opts: {
+  school?: string | undefined;
+  type?: string | undefined;
+  budget?: number | undefined;
+}) {
   return listings.filter(
     (l) =>
       (!opts.school || l.school === opts.school) &&

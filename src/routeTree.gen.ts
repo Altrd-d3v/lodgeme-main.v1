@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as LandlordRouteImport } from './routes/landlord'
 import { Route as ListingsIndexRouteImport } from './routes/listings.index'
 import { Route as ListingsSlugRouteImport } from './routes/listings.$slug'
 
@@ -19,9 +21,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
   id: '/how-it-works',
   path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandlordRoute = LandlordRouteImport.update({
+  id: '/landlord',
+  path: '/landlord',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ListingsIndexRoute = ListingsIndexRouteImport.update({
@@ -37,34 +49,61 @@ const ListingsSlugRoute = ListingsSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/landlord': typeof LandlordRoute
   '/listings/$slug': typeof ListingsSlugRoute
   '/listings/': typeof ListingsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/landlord': typeof LandlordRoute
   '/listings/$slug': typeof ListingsSlugRoute
   '/listings': typeof ListingsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/landlord': typeof LandlordRoute
   '/listings/$slug': typeof ListingsSlugRoute
   '/listings/': typeof ListingsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/how-it-works' | '/listings/$slug' | '/listings/'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/how-it-works'
+    | '/landlord'
+    | '/listings/$slug'
+    | '/listings/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/how-it-works' | '/listings/$slug' | '/listings'
-  id: '__root__' | '/' | '/how-it-works' | '/listings/$slug' | '/listings/'
+  to:
+    | '/'
+    | '/auth'
+    | '/how-it-works'
+    | '/landlord'
+    | '/listings/$slug'
+    | '/listings'
+  id:
+    | '__root__'
+    | '/'
+    | '/auth'
+    | '/how-it-works'
+    | '/landlord'
+    | '/listings/$slug'
+    | '/listings/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthRoute: typeof AuthRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  LandlordRoute: typeof LandlordRoute
   ListingsSlugRoute: typeof ListingsSlugRoute
   ListingsIndexRoute: typeof ListingsIndexRoute
 }
@@ -78,11 +117,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/how-it-works': {
       id: '/how-it-works'
       path: '/how-it-works'
       fullPath: '/how-it-works'
       preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/landlord': {
+      id: '/landlord'
+      path: '/landlord'
+      fullPath: '/landlord'
+      preLoaderRoute: typeof LandlordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/listings/': {
@@ -104,7 +157,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthRoute: AuthRoute,
   HowItWorksRoute: HowItWorksRoute,
+  LandlordRoute: LandlordRoute,
   ListingsSlugRoute: ListingsSlugRoute,
   ListingsIndexRoute: ListingsIndexRoute,
 }

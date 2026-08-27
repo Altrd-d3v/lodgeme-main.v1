@@ -146,8 +146,7 @@ export const updateBookingStatus = createServerFn({ method: "POST" })
   }))
   .handler(async ({ data, context }) => {
     await assertStaff(context as never);
-    const patch: Record<string, unknown> = { status: data.status };
-    if (data.notes !== undefined) patch["admin_notes"] = data.notes;
+    const patch = { status: data.status, ...(data.notes !== undefined ? { admin_notes: data.notes } : {}) };
     const { error } = await context.supabase.from("bookings").update(patch).eq("id", data.id);
     if (error) throw new Error(error.message);
     return { ok: true };

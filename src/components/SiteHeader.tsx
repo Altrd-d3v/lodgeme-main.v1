@@ -6,7 +6,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <Link to="/" className="flex items-center gap-2.5">
+        <Link to="/" className="flex items-center gap-1">
           <img src={logoAsset.url} alt="LodgeMe logo" className="size-9" />
           <span className="text-lg font-semibold tracking-tight">LodgeMe</span>
         </Link>

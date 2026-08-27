@@ -10,15 +10,15 @@ import { formatPrice, roomTypes, schoolLabels, schools } from "@/data/listings";
 export const Route = createFileRoute("/landlord")({
   head: () => ({
     meta: [
-      { title: "My rooms — Lodgemate for landlords" },
+      { title: "My rooms — LodgeMe for landlords" },
       {
         name: "description",
-        content: "Add, edit and unpublish the off-campus rooms you rent to students on Lodgemate.",
+        content: "Add, edit and unpublish the off-campus rooms you rent to students on LodgeMe.",
       },
-      { property: "og:title", content: "My rooms — Lodgemate for landlords" },
+      { property: "og:title", content: "My rooms — LodgeMe for landlords" },
       {
         property: "og:description",
-        content: "Manage your Lodgemate room listings in one place.",
+        content: "Manage your LodgeMe room listings in one place.",
       },
     ],
   }),

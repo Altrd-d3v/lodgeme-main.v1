@@ -77,13 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lodgemate — Off-campus student rooms in Nigeria" },
+      { title: "LodgeMe — Off-campus student rooms in Nigeria" },
       {
         name: "description",
         content: "Inspected off-campus rooms around Nigerian universities, bookable from anywhere.",
       },
-      { name: "author", content: "Lodgemate" },
-      { property: "og:title", content: "Lodgemate — Off-campus student rooms in Nigeria" },
+      { name: "author", content: "LodgeMe" },
+      { property: "og:title", content: "LodgeMe — Off-campus student rooms in Nigeria" },
       {
         property: "og:description",
         content: "Inspected off-campus rooms around Nigerian universities, bookable from anywhere.",

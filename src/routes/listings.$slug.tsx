@@ -21,10 +21,10 @@ export const Route = createFileRoute("/listings/$slug")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Room not found — Lodgemate" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Room not found — LodgeMe" }, { name: "robots", content: "noindex" }] };
     }
     const { listing } = loaderData;
-    const title = `${listing.title} — Lodgemate`;
+    const title = `${listing.title} — LodgeMe`;
     const description = `${listing.type} in ${listing.area}, ${listing.distance}. ${formatPrice(listing.price)} per year.`;
     return {
       meta: [

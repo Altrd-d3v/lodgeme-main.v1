@@ -5,7 +5,7 @@ export function SiteFooter() {
     <footer className="mt-24 border-t border-border/60 bg-secondary/40">
       <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-3">
         <div>
-          <p className="text-base font-semibold">Lodgemate</p>
+          <p className="text-base font-semibold">LodgeMe</p>
           <p className="mt-2 max-w-xs text-sm text-muted-foreground">
             Inspected off-campus rooms around Nigerian universities, bookable from anywhere.
           </p>
@@ -38,12 +38,12 @@ export function SiteFooter() {
                 Manage my rooms
               </Link>
             </li>
-            <li>hello@lodgemate.ng</li>
+            <li>hello@lodgeme.ng</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-border/60 py-5 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Lodgemate. Built for Nigerian students.
+        © {new Date().getFullYear()} LodgeMe. Built for Nigerian students.
       </div>
     </footer>
   );

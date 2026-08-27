@@ -10,16 +10,16 @@ import { lovable } from "@/integrations/lovable/index";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Landlord & agent accounts — Lodgemate" },
+      { title: "Landlord & agent accounts — LodgeMe" },
       {
         name: "description",
         content:
-          "Create a Lodgemate landlord or agent account to list your off-campus rooms and reach students across Nigeria.",
+          "Create a LodgeMe landlord or agent account to list your off-campus rooms and reach students across Nigeria.",
       },
-      { property: "og:title", content: "Landlord & agent accounts — Lodgemate" },
+      { property: "og:title", content: "Landlord & agent accounts — LodgeMe" },
       {
         property: "og:description",
-        content: "Sign up as a landlord or agent and publish your student rooms on Lodgemate.",
+        content: "Sign up as a landlord or agent and publish your student rooms on LodgeMe.",
       },
     ],
   }),
@@ -88,7 +88,7 @@ function AuthPage() {
       <SiteHeader />
       <main className="mx-auto grid max-w-5xl gap-10 px-5 py-16 md:grid-cols-[1fr_420px]">
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight">List your rooms on Lodgemate</h1>
+          <h1 className="text-3xl font-semibold tracking-tight">List your rooms on LodgeMe</h1>
           <p className="mt-3 max-w-md text-muted-foreground">
             Landlords and agents get a free account to publish rooms, keep prices accurate and receive booking
             requests from students who are ready to move in.

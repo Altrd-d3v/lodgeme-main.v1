@@ -6,13 +6,13 @@ import { SiteFooter } from "@/components/SiteFooter";
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How booking a room works — Lodgemate" },
+      { title: "How booking a room works — LodgeMe" },
       {
         name: "description",
         content:
           "Three steps to book an inspected off-campus room from your phone: pick your campus, compare rooms, request to book.",
       },
-      { property: "og:title", content: "How booking a room works — Lodgemate" },
+      { property: "og:title", content: "How booking a room works — LodgeMe" },
       {
         property: "og:description",
         content: "Skip the trek to campus. Compare inspected rooms and book from anywhere in Nigeria.",
@@ -44,7 +44,7 @@ function HowItWorks() {
       <main className="mx-auto max-w-3xl px-5 py-16">
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Booking a room, without the trek</h1>
         <p className="mt-4 text-muted-foreground">
-          Most students still travel to campus early just to hunt for a room. Lodgemate replaces that with three
+          Most students still travel to campus early just to hunt for a room. LodgeMe replaces that with three
           steps you can finish from your phone.
         </p>
 

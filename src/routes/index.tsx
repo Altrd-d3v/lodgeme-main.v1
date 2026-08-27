@@ -11,13 +11,13 @@ import { budgets, listings, roomTypes, schoolCities, schoolLabels, schools } fro
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lodgemate — Off-campus rooms near Nigerian universities" },
+      { title: "LodgeMe — Off-campus rooms near Nigerian universities" },
       {
         name: "description",
         content:
           "Find inspected off-campus student rooms near UNILAG, UI, ABU, UNN, OAU and UNIBEN. Real prices, real distances, landlords who answer.",
       },
-      { property: "og:title", content: "Lodgemate — Off-campus rooms near Nigerian universities" },
+      { property: "og:title", content: "LodgeMe — Off-campus rooms near Nigerian universities" },
       {
         property: "og:description",
         content: "Book an inspected student room near your campus from anywhere in Nigeria.",
@@ -55,7 +55,7 @@ function Index() {
               Find a room near your campus — book it from anywhere.
             </h1>
             <p className="mt-5 max-w-xl text-primary-foreground/85">
-              Lodgemate lists inspected off-campus rooms around Nigerian universities, with real prices, real
+              LodgeMe lists inspected off-campus rooms around Nigerian universities, with real prices, real
               distances and landlords who answer.
             </p>
           </div>

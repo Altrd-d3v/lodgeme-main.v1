@@ -15,12 +15,12 @@ export const Route = createFileRoute("/listings/")({
   }),
   head: () => ({
     meta: [
-      { title: "All off-campus rooms — Lodgemate" },
+      { title: "All off-campus rooms — LodgeMe" },
       {
         name: "description",
         content: "Browse inspected off-campus student rooms by campus, room type and yearly budget.",
       },
-      { property: "og:title", content: "All off-campus rooms — Lodgemate" },
+      { property: "og:title", content: "All off-campus rooms — LodgeMe" },
       {
         property: "og:description",
         content: "Filter verified student rooms by campus, type and budget across Nigeria.",
